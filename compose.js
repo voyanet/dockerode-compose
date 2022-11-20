@@ -67,7 +67,7 @@ class Compose {
       output.volumes = await volumes.up(this.docker, this.projectName, this.recipe, output);
       output.configs = await configs(this.docker, this.projectName, this.recipe, output);
       output.networks = await networks.up(this.docker, this.projectName, this.recipe, output);
-      output.services = await services.up(this.docker, this.projectName, this.recipe, output, options);
+      output.services = await services.upnostart(this.docker, this.projectName, this.recipe, output, options);
       return output;
     } catch (e) {
       throw e;
